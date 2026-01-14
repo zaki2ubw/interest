@@ -1,0 +1,8 @@
+FROM ubuntu:22.04
+
+RUN echo "===THIS IS MERGE CASE===\n"
+RUN apt-get update && \
+apt-get install -y \
+vim gcc gdb valgrind && \
+rm -rf /var/lib/apt/lists/*
+CMD ["bash"]

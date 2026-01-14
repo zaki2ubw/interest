@@ -1,0 +1,10 @@
+FROM ubuntu:22.04
+
+RUN echo "===THIS IS SPLIT CASE==\n"
+RUN apt-get update
+RUN apt-get install -y vim
+RUN apt-get install -y gcc
+RUN apt-get install -y gdb
+RUN apt-get install -y valgrind
+RUN rm -rf /var/lib/apt/lists/*
+CMD ["bash"]
