@@ -6,7 +6,7 @@
 /*   By: sohyamaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 19:48:07 by sohyamaz          #+#    #+#             */
-/*   Updated: 2026/01/18 20:06:41 by sohyamaz         ###   ########.fr       */
+/*   Updated: 2026/01/18 21:09:22 by sohyamaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // ============================================================
@@ -33,8 +33,26 @@
 
 #include "dfs.h"
 
+static void	dfs(int *array, int size, int index);
+
 void	phase1_run(void)
 {
-	printf("[phase1] TODO\n");
+	int	array[] = {1, 2 ,3 ,4, 5};
+	int	size;
+
+	size = (int)(sizeof(array) / sizeof(array[0]));
+	printf("[phase1] Test starting\n");
+	dfs(array, size, 0);
 	return ;
+}
+
+static void	dfs(int *array, int size, int index)
+{
+	if (array == NULL || size < 0 || index < 0)
+		return ;
+	if (index >= size)
+		return ;
+	printf("array[%d]: %d\n", index, array[index]);
+	dfs(array, size, index + 1);
+	printf("Now exit the process of index%d\n", index);
 }
