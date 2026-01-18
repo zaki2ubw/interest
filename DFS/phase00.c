@@ -6,7 +6,7 @@
 /*   By: sohyamaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 19:44:51 by sohyamaz          #+#    #+#             */
-/*   Updated: 2026/01/18 20:14:10 by sohyamaz         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:33:23 by sohyamaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // ============================================================
@@ -33,16 +33,29 @@
 
 #include "dfs.h"
 
+//This is review edition.
+//void	phase0_run(int n)
+//{
+//	int	depth;
+//
+//	if (n < 0)
+//		return ;
+//	depth = n;
+//	if (depth == 0)
+//	{
+//		printf("You reached the bottom\n");
+//		return ;
+//	}
+//	printf("You have to down %d times to reach the bottom\n", depth);
+//	phase0_run(depth - 1);
+//	return ;
+//}
+
 void	phase0_run(int n)
 {
-	int	depth;
-
-	if (n < 0)
+	if (n <= 0)
 		return ;
-	depth = n;
-	if (depth == 0)
-		return ;
-	printf("Your standing depth is %d\n");
-	phase0_run(depth - 1);
-	return ;
+	printf("downside: %d\n", n);
+	phase0_run(n - 1);
+	printf("upside: %d\n", n);
 }

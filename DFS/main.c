@@ -6,14 +6,14 @@
 /*   By: sohyamaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 19:22:47 by sohyamaz          #+#    #+#             */
-/*   Updated: 2026/01/18 20:07:21 by sohyamaz         ###   ########.fr       */
+/*   Updated: 2026/01/18 20:15:47 by sohyamaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "phases.h"
+#include "dfs.h"
 
 //This test is made by chappy
 
