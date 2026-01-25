@@ -6,7 +6,7 @@
 /*   By: sohyamaz <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/18 20:05:07 by sohyamaz          #+#    #+#             */
-/*   Updated: 2026/01/18 20:06:31 by sohyamaz         ###   ########.fr       */
+/*   Updated: 2026/01/25 18:10:06 by sohyamaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 // ============================================================
@@ -36,8 +36,70 @@
 
 #include "dfs.h"
 
+static void	dfs_phase04(char **input, int height, int width, int depth, int index);
+
 void	phase4_run(void)
 {
-	printf("[phase4] TODO\n");
+	char	grid0[] = "#..##.#.";
+	char	grid1[] = "...##.#.";
+	char	grid2[] = "#.###.#.";
+	char	grid3[] = "#.#####.";
+	char	grid4[] = "#..#....";
+	char	grid5[] = "##.##.#.";
+	char	grid6[] = "#..##.##";
+	char	grid7[] = "##.##.##";
+	char	*input[] =
+	{
+		grid0,
+		grid1,
+		grid2,
+		grid3,
+		grid4,
+		grid5,
+		grid6,
+		grid7
+	};
+	int	i;
+
+	i = 0;
+	while(i < 8)
+	{
+		printf("input: %s\n", input[i]);
+		i++;
+	}
+	dfs_phase04(input, 8, 9, 0, 0);
+	i = 0;
+	while(i < 8)
+	{
+		printf("output: %s\n", input[i]);
+		i++;
+	}
 	return ;
+}
+
+static void	dfs_phase04(char **input, int height, int width, int depth, int index)
+{
+	int	i;
+
+	if (*input == NULL || height == 0 || width == 0)
+	{
+		printf("Error: invalid arguments\n");
+		return ;
+	}
+	if (index >= width)
+	{
+		index = 0;
+		depth++;
+	}
+	if (height <= depth)
+		return ;
+	if (input[depth][index] == '#')
+		input[depth][index] = '.';
+	i = 0;
+	while(i < 8)
+	{
+		printf("current: %s\n", input[i]);
+		i++;
+	}
+	dfs_phase04(input, height, width, depth, index + 1);
 }
